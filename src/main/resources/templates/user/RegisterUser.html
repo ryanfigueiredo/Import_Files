@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Document</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous">
+</head>
+
+<body>
+
+	<div class="container mt-4">
+		<form method="post">
+			<div class="row">
+				<div class="col-md-6">
+					<label for="firstName">Nome</label> <input type="text"
+						class="form-control" id="exampleInputEmail1"
+						aria-describedby="emailHelp" placeholder="Nome"  value="" name="firstName">
+				</div>
+				<div class="col-md-6">
+					<label for="lastName">Sobrenome</label> <input type="text"
+						class="form-control" id="exampleInputEmail1"
+						aria-describedby="emailHelp" placeholder="Sobrenome"  value="" name="lastName">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6">
+					<label for="cpf">CPF</label> <input type="text"
+						class="form-control" id="exampleInputEmail1"
+						aria-describedby="emailHelp" placeholder="CPF"  value="" name="cpf">
+				</div>
+				<div class="col-md-3">
+					<label for="gener">Cargo</label> 
+					<select class="form-control" name="officeResponsability" id="officeResponsability">
+						<option th:each="officeResponsability : ${officeResponsabilitys}"
+							th:text="${officeResponsability.name}"
+							value="${officeResponsibility.ID}"></option>
+					</select>
+				</div>
+				<div class="col-md-3">
+					<label for="gener">Time</label> <select class="form-control" name="time">
+						<option value="dev">Desenvolvimento</option>
+						<option value="test">Testes</option>
+					</select>
+				</div>
+			</div>
+			<button type="submit" class="btn btn-primary mt-3">Cadastrar</button>
+		</form>
+	</div>
+
+
+</body>
+
+</html>
